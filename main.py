@@ -1,6 +1,7 @@
 import requests
 import os
 import random
+import time
 
 API_KEY = "API КЛЮЧ ВАШЕГО СООБЩЕСТВА"
 GROUP_ID = 000000000 # id ваше сообщества
@@ -78,4 +79,6 @@ def main():
             save_uploades_photo(r["hash"], r["photo"])
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
+        time.sleep(60)
