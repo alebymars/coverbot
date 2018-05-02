@@ -45,7 +45,7 @@ def get_server_for_upload_cover():
         }).json()
 
         return r["response"]["upload_url"]
-    except IndexError:
+    except KeyError:
         print(r)
 
 def upload_files_to_server(server_for_upload: str, files: dict) -> dict:
