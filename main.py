@@ -36,7 +36,11 @@ def get_server_for_upload_cover():
     """
     try:
         r = make_request("photos.getOwnerCoverPhotoUploadServer", {
-            "group_id": GROUP_ID
+            "group_id": GROUP_ID,
+            'crop_x': 0,
+            'crop_y': 0,
+            'crop_x2': 1590,
+            'crop_y2': 440
         }).json()
 
         return r["response"]["upload_url"]
